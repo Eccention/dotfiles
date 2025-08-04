@@ -1,0 +1,8 @@
+# ~/.zshrc
+export ZSH="$HOME/.oh-my-zsh"
+source ~/.aliases
+source ~/.functions
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(starship init zsh)"
+[ -d "$HOME/.venv" ] && source "$HOME/.venv/bin/activate"
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh" && nvm use default
