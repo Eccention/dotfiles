@@ -6,3 +6,11 @@ serve() {
 dr() {
   sudo systemctl restart docker
 }
+
+search-text() {
+  grep -rnw . -e "$1"
+}
+
+fuzzy-search() {
+  fzf --preview 'bat --style=numbers --color=always {}'
+}
