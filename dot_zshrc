@@ -4,9 +4,13 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.aliases
 source ~/.functions
 export PATH="$HOME/.local/bin:$PATH"
+
 if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
 [ -d "$HOME/.venv" ] && source "$HOME/.venv/bin/activate"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && nvm use default
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  \. "$NVM_DIR/nvm.sh"
+  nvm use default >/dev/null 2>&1 || echo "⚠️ NVM default version not set"
+fi
