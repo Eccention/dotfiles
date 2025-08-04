@@ -1,0 +1,14 @@
+# ~/.nanorc (Solarized Dark)
+set linenumbers
+set softwrap
+set tabsize 2
+set autoindent
+set smarthome
+set constantshow
+set mouse
+
+## syntax highlighting
+include "/usr/share/nano/*.nanorc"
+syntax "git" "\.git.*"
+color brightgreen "added"
+color red "deleted"
