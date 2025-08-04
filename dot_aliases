@@ -10,3 +10,13 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias venv='source ~/.venv/bin/activate'
 alias reload!='source ~/.zshrc'
+
+# Fancy ls and search aliases
+alias ll='ls -lhF --color=auto'
+alias la='ls -lahF --color=auto'
+alias lt='ls -lt --color=auto'
+alias lsd='ls -d */'
+alias ff='find . -type f -name'
+alias fd='fd .'
+alias rg='rg --smart-case'
+alias grep='grep --color=auto'
