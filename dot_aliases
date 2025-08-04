@@ -1,0 +1,12 @@
+# ~/.aliases
+alias gs='git status'
+alias gp='git pull'
+alias gc='git commit'
+alias gco='git checkout'
+alias gcam='git commit -am'
+alias dc='docker compose'
+alias cla='claude'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias venv='source ~/.venv/bin/activate'
+alias reload!='source ~/.zshrc'
