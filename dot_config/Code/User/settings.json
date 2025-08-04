@@ -1,0 +1,12 @@
+{
+  "editor.fontFamily": "Fira Code, monospace",
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "on",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Solarized Dark",
+  "files.trimTrailingWhitespace": true,
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.defaultProfile.linux": "bash"
+}
