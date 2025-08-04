@@ -1,0 +1,26 @@
+# ~/.config/starship.toml
+format = "\n$username@$hostname [$directory]($style) $git_branch $character"
+
+[character]
+success_symbol = "[\u276f](green)"
+error_symbol = "[\u2717](red)"
+
+[directory]
+truncation_length = 3
+style = "cyan"
+
+[git_branch]
+symbol = " "
+style = "purple"
+
+[git_status]
+disabled = false
+
+[python]
+disabled = false
+
+[nodejs]
+disabled = false
+
+[docker_context]
+disabled = false
