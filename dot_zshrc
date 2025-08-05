@@ -15,8 +15,3 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   \. "$NVM_DIR/nvm.sh"
   nvm use default >/dev/null 2>&1 || echo "⚠️ NVM default version not set"
 fi
-
-# Auto-attach to tmux if available
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
