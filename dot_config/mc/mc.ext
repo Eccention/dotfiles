@@ -1,0 +1,2 @@
+regex/\.(md|py|sh|js|yml|yaml|toml|json)$
+    View=%view{ascii} bat --paging=always --style=plain %f

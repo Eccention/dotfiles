@@ -1,0 +1,6 @@
+[Midnight-Commander]
+show_hidden=true
+use_internal_view=true
+use_internal_edit=false
+confirm_delete=false
+auto_save_setup=true

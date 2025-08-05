@@ -1,14 +1,17 @@
-# ~/.nanorc (Solarized Dark)
 set linenumbers
-set softwrap
-set tabsize 2
-set autoindent
-set smarthome
-set constantshow
 set mouse
+set tabsize 4
+set softwrap
+set autoindent
+set indicator
+set smooth
+set constantshow
+set titlecolor white
+set statuscolor green
+set selectedcolor black,white
 
-## syntax highlighting
-include "/usr/share/nano/*.nanorc"
-syntax "git" "\.git.*"
-color brightgreen "added"
-color red "deleted"
+include "/usr/share/nano/python.nanorc"
+include "/usr/share/nano/json.nanorc"
+include "/usr/share/nano/sh.nanorc"
+include "/usr/share/nano/yaml.nanorc"
+include "/usr/share/nano/dockerfile.nanorc"
