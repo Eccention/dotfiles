@@ -1,0 +1,10 @@
+[General]
+ShowFullPath=true
+ShowToolTips=true
+SplitView=true
+RememberOpenedTabs=true
+
+[ViewProperties]
+PreviewsShown=true
+SortOrder=Ascending
+SortRole=modified
