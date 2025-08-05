@@ -1,9 +1,10 @@
 # ~/.config/starship.toml
 format = "\n$username@$hostname [$directory]($style) $git_branch $character"
 
+# The [character] module, which shows at the end of the prompt.
 [character]
-success_symbol = "[\u276f](green)"
-error_symbol = "[\u2717](red)"
+success_symbol = "[❯](bold green)" # The symbol to use for a successful command
+error_symbol = "[✖](bold red)"   # The symbol for a failed command
 
 [directory]
 truncation_length = 3
@@ -49,7 +50,8 @@ format = '[$symbol$context]($style) '
 only_with_files = false
 disabled = false
 
-[ssh]
-symbol = "🌐 "
+[hostname]
+ssh_only = true
+ssh_symbol = "🌐 "
 style = "bold green"
 disabled = false
