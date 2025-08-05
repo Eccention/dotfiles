@@ -1,22 +1,49 @@
 # ~/.aliases
-alias gs='git status'
-alias gp='git pull'
-alias gc='git commit'
-alias gco='git checkout'
-alias gcam='git commit -am'
-alias dc='docker compose'
-alias cla='claude'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias venv='source ~/.venv/bin/activate'
-alias reload!='source ~/.zshrc'
 
-# Fancy ls and search aliases
-alias ll='ls -lhF --color=auto'
-alias la='ls -lahF --color=auto'
-alias lt='ls -lt --color=auto'
-alias lsd='ls -d */'
-alias ff='find . -type f -name'
-alias fd='fd .'
-alias rg='rg --smart-case'
-alias grep='grep --color=auto'
+##### Chezmoi #####
+alias cheznew='chezmoi update --force'        # Force-pull and apply latest dotfiles from your GitHub repo
+alias chezadd='chezmoi add'                   # Add new config to Chezmoi
+alias chezpush='chezmoi cd && git add . && git commit -m "chezmoi update" && git push && cd ~'  #Force-push config changes from the system to the GitHub repo
+
+##### Git #####
+alias gstat='git status'                      # Show current Git working tree status
+alias gpull='git pull'                        # Pull latest changes from remote
+alias gcommit='git commit'                    # Open editor to write a commit message
+alias gcheck='git checkout'                   # Switch branches or restore files
+alias gcam='git commit -am'                   # Commit all staged changes with a message
+
+##### Docker #####
+alias dup='docker compose up'                 # Start Docker Compose services
+alias dcd='docker compose down'               # Stop and remove Docker Compose services
+alias dps='docker ps'                         # Show running Docker containers
+
+##### Claude #####
+alias cla='claude'                            # Launch Claude CLI (if installed)
+
+##### Python #####
+alias venv='source ~/.venv/bin/activate'      # Activate your Python virtual environment
+alias reload!='source ~/.zshrc'               # Reload your shell configuration
+
+##### System #####
+
+## Meta ##
+alias lstalias='awk -F"#" '\''/alias/ {printf "%-40s %s\n", $1, $2}'\'' ~/.config/aliases.zsh'
+# List all aliases in your alias file along with descriptions (parsed from comments)
+
+## Updates ##
+alias update="sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y && command -v nvm >/dev/null && nvm install node --reinstall-packages-from=node || true && command -v flatpak >/dev/null && flatpak update -y || true && command -v pipx >/dev/null && pipx upgrade-all || true"
+# Run full system + dev environment update (APT, NVM, Flatpak, Pipx, cleanup)
+
+## Navigation ##
+alias ..='cd ..'                               # Go up one directory
+alias ...='cd ../..'                           # Go up two directories
+alias ll="ls -alF --color=auto"                # Long listing, show all files, with color
+alias la="ls -A --color=auto"                  # List all except `.` and `..`, with color
+alias lt='ls -lt --color=auto'                 # List by modification time, descending
+alias lsd='ls -d */'                           # List only directories
+
+## Find/Search ##
+alias ff='find . -type f -name'                # Find files by name (add pattern after)
+alias fd='fd .'                                # Use `fd` to find all files from current dir
+alias rg='rg --smart-case'                     # Use `ripgrep` with smart case sensitivity
+alias grep='grep --color=auto'                 # Use grep with colorized matches
