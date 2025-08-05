@@ -24,3 +24,6 @@ disabled = false
 
 [docker_context]
 disabled = false
+
+[ssh_symbol]
+disabled = false
