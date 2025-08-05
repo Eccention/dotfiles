@@ -1,17 +1,11 @@
 set linenumbers
-set mouse
-set tabsize 4
+set tabsize 2
 set softwrap
 set autoindent
 set indicator
-set smooth
 set constantshow
 set titlecolor white
 set statuscolor green
 set selectedcolor black,white
 
-include "/usr/share/nano/python.nanorc"
-include "/usr/share/nano/json.nanorc"
-include "/usr/share/nano/sh.nanorc"
-include "/usr/share/nano/yaml.nanorc"
-include "/usr/share/nano/dockerfile.nanorc"
+include "/usr/share/nano/*.nanorc"
