@@ -27,7 +27,7 @@ alias reload!='source ~/.zshrc'               # Reload your shell configuration
 ##### System #####
 
 ## Meta ##
-alias lstalias='awk -F"#" '\''/alias/ {printf "%-40s %s\n", $1, $2}'\'' ~/.config/aliases.zsh'
+alias lstalias='awk -F"#" '\''/alias/ {printf "%-40s %s\n", $1, $2}'\'' ~/.aliases'
 # List all aliases in your alias file along with descriptions (parsed from comments)
 
 ## Updates ##
