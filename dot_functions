@@ -14,3 +14,24 @@ search-text() {
 fuzzy-search() {
   fzf --preview 'bat --style=numbers --color=always {}'
 }
+
+# A safer command to remove only symbolic links
+rmlink() {
+  # Check if an argument was provided
+  if [ -z "$1" ]; then
+    echo "Usage: rmlink <path_to_symlink>"
+    return 1
+  fi
+
+  # The main safety check:
+  # The '-L' test checks if the path exists AND is a symbolic link.
+  if [ -L "$1" ]; then
+    echo "Removing symlink: '$1'"
+    # The '--' ensures that filenames starting with a '-' are not treated as options
+    rm -- "$1"
+    echo "Symlink removed."
+  else
+    echo "Error: '$1' is not a symbolic link. No action taken."
+    return 1
+  fi
+}
