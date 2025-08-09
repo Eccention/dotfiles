@@ -37,9 +37,11 @@ setopt SHARE_HISTORY            # note: interleaves history across terminals
 # When searching history, skip duplicates
 setopt HIST_FIND_NO_DUPS
 
-# Make arrow keys do "prefix search" instead of raw previous/next
-autoload -Uz history-beginning-search-backward history-beginning-search-forward
-zle -N history-beginning-search-backward
-zle -N history-beginning-search-forward
-bindkey "${terminfo[kcuu1]}" history-beginning-search-backward   # Up
-bindkey "${terminfo[kcud1]}" history-beginning-search-forward    # Down
+# Prefix search on arrows (built-in)
+bindkey -M emacs "${terminfo[kcuu1]}" history-search-backward
+bindkey -M emacs "${terminfo[kcud1]}" history-search-forward
+bindkey -M viins "${terminfo[kcuu1]}" history-search-backward
+bindkey -M viins "${terminfo[kcud1]}" history-search-forward
+# Fallback if $terminfo isn't set
+[[ -n ${terminfo[kcuu1]} ]] || bindkey '^[[A' history-search-backward
+[[ -n ${terminfo[kcud1]} ]] || bindkey '^[[B' history-search-forward
