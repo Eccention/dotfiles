@@ -15,3 +15,31 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   \. "$NVM_DIR/nvm.sh"
   nvm use default >/dev/null 2>&1 || echo "⚠️ NVM default version not set"
 fi
+
+# History file/size
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
+# Collapse duplicates aggressively
+setopt HIST_IGNORE_DUPS         # ignore if same as previous
+setopt HIST_IGNORE_ALL_DUPS     # keep only the most recent copy of any cmd
+setopt HIST_SAVE_NO_DUPS        # don't write dups to $HISTFILE
+setopt HIST_EXPIRE_DUPS_FIRST   # expire dups before unique entries
+setopt HIST_REDUCE_BLANKS       # trim excess spaces
+setopt HIST_IGNORE_SPACE        # lines starting with space aren't saved (handy)
+
+# (Optional) shared/timestamped history across shells
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+setopt SHARE_HISTORY            # note: interleaves history across terminals
+
+# When searching history, skip duplicates
+setopt HIST_FIND_NO_DUPS
+
+# Make arrow keys do "prefix search" instead of raw previous/next
+autoload -Uz history-beginning-search-backward history-beginning-search-forward
+zle -N history-beginning-search-backward
+zle -N history-beginning-search-forward
+bindkey "${terminfo[kcuu1]}" history-beginning-search-backward   # Up
+bindkey "${terminfo[kcud1]}" history-beginning-search-forward    # Down
